@@ -1,0 +1,35 @@
+public class Employee6 {
+    int empId;
+    String empName;
+
+    public Employee6(int empId, String empName){
+        super();
+        this.empId = empId;
+        this.empName = empName;
+    }
+
+    @Override
+    public int hashCode(){
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + empId;
+        result = prime * result + ((empName == null) ? 0 : empName.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        Employee6 other = (Employee6) obj;
+        if(empId != other.empId)
+            return false;
+        if(empName == null){
+            if(other.empName != null)
+                return false;
+        }
+        else if(!empName.equals(other.empName))
+            return false;
+        return true;
+
+    }
+
+}
